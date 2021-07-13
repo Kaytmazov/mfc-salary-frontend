@@ -1,0 +1,26 @@
+.login-form {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  background: url('../../assets/bg.jpg') center no-repeat #343a40;
+  background-size: cover;
+
+  form {
+    width: 450px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+
+    .form-label {
+      color: #fff;
+    }
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 1.8rem;
+  }
+}

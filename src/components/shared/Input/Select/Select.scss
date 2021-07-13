@@ -1,0 +1,68 @@
+.input-wrapper .react-select {
+  &__control {
+    height: 54px;
+    border-color: var(--input-border-color);
+    background-color: var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    box-shadow: none;
+    cursor: pointer;
+
+    &:not(.react-select__control--is-focused):hover {
+      border-color: var(--input-border-color);
+    }
+
+    &--is-focused {
+      border-color: var(--input-focus-border-color);
+      background-color: #fff;
+    }
+  }
+
+  &__value-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  &__single-value {
+    color: var(--input-color);
+  }
+
+  &--is-disabled {
+    .react-select__control {
+      background-color: var(--input-disabled-bg);
+    }
+
+    & ~ .form-label {
+      color: var(--input-disabled-color);
+      cursor: default;
+    }
+  }
+
+  &__menu {
+    margin-top: 1px;
+    border-radius: 0;
+  }
+}
+
+.react-select-container {
+  outline: none;
+
+  &.is-invalid {
+    .react-select__control {
+      border-color: var(--input-invalid-background-color);
+      background-color: var(--input-invalid-background-color);
+
+      &:not(.react-select__control--is-focused):hover {
+        border-color: var(--input-invalid-background-color);
+      }
+
+      &--is-focused {
+        border-color: var(--input-focus-border-color);
+        background-color: #fff;
+      }
+    }
+
+    &:hover ~ .invalid-tooltip {
+      display: block;
+    }
+  }
+}
