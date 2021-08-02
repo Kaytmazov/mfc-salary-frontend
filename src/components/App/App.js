@@ -8,9 +8,7 @@ import FullPageSpinner from '../shared/FullPageSpinner';
 import { useAuth } from '../../context/auth-context';
 import '../../utils/validations';
 
-const AuthenticatedApp = React.lazy(() =>
-  import(/* webpackPrefetch: true */ './AuthenticatedApp'),
-);
+const AuthenticatedApp = React.lazy(() => import(/* webpackPrefetch: true */ './AuthenticatedApp'));
 const UnauthenticatedApp = React.lazy(() => import('./UnauthenticatedApp'));
 
 toast.configure({
@@ -18,13 +16,13 @@ toast.configure({
 });
 
 const App = () => {
-  const { user } = useAuth();
+  const { isAuth } = useAuth();
 
   return (
     <React.Suspense fallback={<FullPageSpinner />}>
-      {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+      {isAuth ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </React.Suspense>
-  )
-}
+  );
+};
 
 export default App;

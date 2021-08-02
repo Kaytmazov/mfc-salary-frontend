@@ -1,0 +1,26 @@
+.pagination {
+  display: inline-flex;
+  margin-bottom: 0;
+  background-color: #eef0f4;
+  border-radius: 20px;
+
+  .page-item {
+    margin-bottom: 0;
+
+    &:first-of-type .page-link {
+      padding-left: 20px;
+    }
+
+    &:last-of-type .page-link {
+      padding-right: 20px;
+    }
+
+    .page-link {
+      border-radius: 10px;
+
+      &:focus {
+        color: var(--info);
+      }
+    }
+  }
+}

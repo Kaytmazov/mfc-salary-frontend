@@ -1,12 +1,11 @@
-/* eslint-disable prettier/prettier */
 const employeeStatusColorsMap = {
-  'работает': 'success',
-  'уволен': 'danger',
+  работает: 'success',
+  уволен: 'danger',
   'в отпуске': 'warning',
   'в декретном отпуске': 'warning',
   'на больничном': 'warning',
-  'отключен': 'secondary',
-  'перевелся': 'light'
+  отключен: 'secondary',
+  перевелся: 'light',
 };
 
 export default employeeStatusColorsMap;

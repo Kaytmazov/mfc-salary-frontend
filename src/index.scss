@@ -19,7 +19,7 @@ $navbar-bg: #263341;
 $primary: #145388;
 $success: #23be5f;
 $danger: #dc3545;
-$info: #1e90ff;
+$info: #3c82f5;
 $warning: #c79b64;
 $light: #ececec;
 
@@ -59,7 +59,7 @@ $dropdown-link-hover-color: #fff;
 $dropdown-link-hover-bg: lighten($navbar-bg, 10);
 $dropdown-link-active-bg: $dropdown-link-hover-bg;
 
-$btn-border-radius: 0;
+$btn-border-radius: var(--input-border-radius);
 $input-border-radius: var(--input-border-radius);
 $input-color: var(--input-color);
 $input-border-color: var(--input-border-color);
@@ -76,7 +76,7 @@ $input-btn-padding-x: 18px;
 $input-height-inner-quarter: 10px;
 $input-height-inner-half: 20px;
 $custom-select-indicator-padding: 15px;
-$form-group-margin-bottom: 12px;
+$form-group-margin-bottom: 16px;
 $enable-validation-icons: false;
 $label-margin-bottom: 0.2rem;
 
@@ -96,7 +96,28 @@ $badge-padding-x: 0.5rem;
 
 $card-border-color: transparent;
 
+// Pagination
+$pagination-padding-y: 10px;
+$pagination-padding-x: 14px;
+$pagination-color: #777;
+$pagination-bg: transparent;
+$pagination-border-width: 0;
+
+$pagination-hover-color: $info;
+$pagination-hover-bg: $pagination-bg;
+
+$pagination-focus-box-shadow: unset;
+
+$pagination-active-bg: $pagination-hover-color;
+
+$pagination-disabled-color: var(--muted);
+$pagination-disabled-bg: $pagination-bg;
+
 @import '~bootstrap/scss/bootstrap';
+
+html {
+  font-size: 14px;
+}
 
 .app {
   &-content {
@@ -200,7 +221,7 @@ legend {
 
 .input-wrapper {
   position: relative;
-  margin-bottom: 16px;
+  // margin-bottom: $form-group-margin-bottom;
 
   .react-datepicker-wrapper {
     display: block;
@@ -228,4 +249,63 @@ legend {
 .modal-mini .modal-content {
   padding: 5px 10px;
   border-radius: 8px;
+}
+
+.table {
+  thead th {
+    border-top: 0;
+    font-weight: 500;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  &-nopadding {
+    td,
+    th {
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .th-number {
+    width: 30px;
+  }
+}
+
+.table-hover tbody tr {
+  cursor: pointer;
+}
+
+.nav-tabs {
+  margin: 0 0 2rem;
+
+  .nav-link {
+    padding: 0rem 1.8rem 0.6rem;
+    border-width: 0 0 2px 0;
+    border-color: $nav-tabs-border-color;
+    color: $body-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: $primary;
+
+      .icon {
+        fill: $primary;
+      }
+    }
+
+    &.active .icon {
+      fill: $primary;
+    }
+  }
 }

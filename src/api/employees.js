@@ -1,12 +1,26 @@
 import { v4 as uuid } from 'uuid';
+// import { graphQLClient, gql } from '../services/apiService';
+
+// const ALL_EMPLOYEES_QUERY = gql`
+//   {
+//     allEmployees {
+//       ok
+//       error
+//       employees {
+//         id
+//         fio
+//         login
+//       }
+//     }
+//   }
+// `;
 
 // Получение списка сотрудников
-const get = () => {
-  const data = JSON.parse(localStorage.getItem('employees')) || [];
-
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(data), 800)
-  });
+const get = async () => {
+  // const {
+  //   allEmployees: { employees },
+  // } = await graphQLClient.request(ALL_EMPLOYEES_QUERY);
+  // return employees;
 };
 
 // Добавление сотрудника
@@ -41,7 +55,7 @@ const edit = (employeeId, values) => {
     ...currentEmployees.slice(0, employeeIndex),
     updatedEmployee,
     ...currentEmployees.slice(employeeIndex + 1),
-  ]
+  ];
 
   localStorage.setItem('employees', JSON.stringify(newEmployees));
 
@@ -62,9 +76,4 @@ const del = (employeeId) => {
   });
 };
 
-export {
-  get,
-  add,
-  edit,
-  del
-};
+export { get, add, edit, del };

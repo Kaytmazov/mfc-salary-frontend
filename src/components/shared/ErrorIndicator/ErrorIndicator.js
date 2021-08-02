@@ -1,14 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import Alert from 'react-bootstrap/Alert';
 
-const ErrorIndicator = ({ error }) => {
-  if (error.request) {
-    console.error('error.request', error.request);
-  }
+import getErrorText from '../../../utils/getErrorText';
 
-  return <Alert variant="danger">{error.message}</Alert>;
+const ErrorIndicator = ({ error }) => {
+  return <Alert variant="danger">{getErrorText(error)}</Alert>;
 };
 
 ErrorIndicator.propTypes = {
